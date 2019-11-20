@@ -365,8 +365,28 @@ print(calc_hypo(0, -2))
 print(calc_hypo(3, 4))
 print(calc_hypo('python', 'java'))
 
-# EXERCISE 9 - SCRIPTS AD LIBRARIES
+# EXERCISE 9 - SCRIPTS AND LIBRARIES
 
+#Q1 - create python library
 
-#Q1 
+#  Create a directory (Linux) called 'dancing'
+#  Create a file in 'dacing called '__init__.py' and add a variable
+#  Run by using == python -c 'import dancing'
+
+#Q2 - create python module
+
+#  We have a dancer.py file with 'boogie' function which is placed in the 'dancing' file.
+#  Import the boogie function == 'python -c 'from dancing.dance import boogie''
+
+#Q3 -
+
+#  Create a new file called dancer.py with the following content:
+#   import sys
+#   from dancing.dance import boogie
+#   moves = sys.argv[1:]
+#   boogie(moves)
+#  run by using == python dancer.py
+#  add values to the 'moves' variable or add the values to the end of the command and run again using == python dancer.py Twist LightBulb
+
+# EXERCISE 10 - SETS AND DICTIONARIES 
 

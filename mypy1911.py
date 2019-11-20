@@ -139,8 +139,8 @@ print(forward == backward)
     
 countries = ['uk', 'usa', 'uk', 'uae']
 type(countries)
-dir(countries)
-help(countries.count)
+#dir(countries)
+#help(countries.count)
 
 countries.count('uk') #counting the countries
 
@@ -255,7 +255,7 @@ print(s[-1])
 
 #  print length of s
 
-print(len{s)
+print(len(s))
 
 print(s[0])
 print(s[0][0]) 
@@ -280,7 +280,7 @@ for word in split_s:
 
 
 something = ('Completely Different')
-dir(something)
+#dir(something)
 
 print(something.count('t')) # count the number of 't' present
 print(something.find('plete')) # find the position of 'plete'
@@ -310,7 +310,7 @@ print(a, b)
 
 a = 'can I change'
 b = a
-print(a), b)
+print(a, b)
 
 b = 'different'
 print(a, b)
@@ -330,12 +330,43 @@ print(a, b)
 
 #Q1 - create simple function
 
+def double_it(number):
+    return 2 * number
+
+double_it(2)
+double_it(0.5)
+double_it('hello')
 
 #Q2 - calculate length of hypotenuse
 
+#  define a funtion with two arguments 
+def calc_hypo(a, b):
+    #  using the arguments to solve
+    hypo = (a**2 + b**2)**0.5
+    return hypo
+
+print(calc_hypo(3, 4))
 
 #Q3 - improve function by adding check codes
 
+def calc_hypo(a, b):
+    #  check for the type of 'a' and 'b' to be an integer or a float
+    if type(a) not in (int, float) or type(b) not in (int, float):
+        print('Incorrect type of argument!')
+        return False
+    #  ensure the value of 'a' and 'b' are positpyive
+    if a <= 0 or b <= 0:
+        print('Negative argument!')
+        return False
+    hypo = (a**2 + b**2)**0.5
+    return hypo
+
+print(calc_hypo(0, -2))
+print(calc_hypo(3, 4))
+print(calc_hypo('python', 'java'))
+
+# EXERCISE 9 - SCRIPTS AD LIBRARIES
 
 
+#Q1 
 

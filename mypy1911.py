@@ -187,11 +187,122 @@ print(first, middle, last)
 
 # EXERCISE 5 - INPUT AND OUTPUT
 
-#Q1
+#Q1 - read CSV file
+
+#opening and reading the file within the working directory
+with open('weather.csv', 'r') as reader:
+    data = reader.read()
+print(data)
+
+#Q2 - read the file line by line
+
+#  while loop reading lines in file until empty string
+with open('weather.csv', 'r') as reader:
+    while True:
+        line = reader.readline()
+        if not line: 
+            break
+        print(line)
+print('It\'s over')
+
+
+#Q3 - use 'for' loop instead of 'while' loop
+
+# reading the line in the file
+with open('weather.csv', 'r') as reader:
+    header = reader.readline()
+    #  creating an empty list
+    rain = [] 
+    #  extract rainfall values from file and add to 'rain'
+    for line in reader.readlines():
+        # line.strip() strips white spaces before and after in lines
+        # line.split(',')[-1] split the data by comma(',') and select the last value in the list
+        # float() remains the data as a non-integer
+      
+        rainfall  = float(line.strip().split(',')[-1])
+        # update the 'rain' list with the values collected in rainfall
+        rain.append(rainfall)
+
+print(rain)
+
+#  add the rainfall data into a text file 'myrain.txt'
+with open('myrain.txt', 'w') as writer:
+    for rainfall in rain:
+        writer.write(str(rainfall) + '\n')
+#  check the content of the file
+with open('myrain.txt', 'r') as reader:
+    data_rain = reader.read()
+print(data_rain)
+
+#EXERCISE 5 - STRINGS
+
+#Q1 - loop through a string as a sequence
+
+#  create string
+s = ('I love to write Python')
+
+#  loop through to display each value in string
+for i in s:
+    print(i)
+
+#  print 5th value of the string
+
+print(s[4])
+
+#  print last element of s
+
+print(s[-1])
+
+#  print length of s
+
+print(len{s)
+
+print(s[0])
+print(s[0][0]) 
+print(s[0][0][0])
+
+
+#Q2 - splitting strings
+
+# split the phrase of 's'
+split_s = s.split()
+print(split_s)
+
+#  loop through the words and state in which word contains 'i'
+for word in split_s:
+    if word.lower().find('i') > -1:
+        print(f"I found 'i' in {word}")
+
+# if 'i' word:
+    # print(f"I found 'i' in {word})
+
+#Q3 - other aspects of strings
+
+
+something = ('Completely Different')
+dir(something)
+
+print(something.count('t')) # count the number of 't' present
+print(something.find('plete')) # find the position of 'plete'
+print(something.split('e')) # splits after letter 'e'
+
+thing2 = something.replace('Different', 'Silly')  
+print(thing2) #  replace the words
+
+#  something[0] = 'B' gives an error since strings are immutable 
+
+
+#EXERCISE 7 - ALIASING
+
+#Q1 - create alias and try changing original variable and alias
 
 
 
+#Q2 - alias with a string
 
+
+
+#Q3 - force a 'deep' copy
 
 
 

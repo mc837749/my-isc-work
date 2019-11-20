@@ -296,15 +296,45 @@ print(thing2) #  replace the words
 
 #Q1 - create alias and try changing original variable and alias
 
+a = list(range(3))
+b = a
+print(a, b)
 
+b[0] = 'hello'
+print(a, b)
+
+a.append(3)
+print(a, b)
 
 #Q2 - alias with a string
 
+a = 'can I change'
+b = a
+print(a), b)
 
+b = 'different'
+print(a, b)
 
 #Q3 - force a 'deep' copy
 
+import copy
+a = list(range(3))
+b = copy.deepcopy(a)
+print(a, b)
 
+b[0] = 'hello'
+print(a, b)
+
+
+# EXERCISE 8 - FUNCTIONS
+
+#Q1 - create simple function
+
+
+#Q2 - calculate length of hypotenuse
+
+
+#Q3 - improve function by adding check codes
 
 
 

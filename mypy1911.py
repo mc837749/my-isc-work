@@ -487,6 +487,7 @@ print( a[1:,2] )
 
 # EXERCISE 2 - INTERROGATING AND MANIPULATING ARRAYS
 
+import numpy as np
 #Q1
 
 arr = np.array( [ [np.arange(4)], [np.arange(10,14)] ])
@@ -505,7 +506,80 @@ print( arr.astype(np.float32) ) # convert to floats
 
 # EXERCISE 3 - ARRAY CALCULATIONS AND OPERATIONS
 
+import numpy as np
+
 #Q1 
+
+a = np.array( [ [ np.arange(4) ], [ np.arange(10, 14) ] ] )
+
+b = np.array( [2, -1, 1, 0] )
+
+a * b # this is allowed in Python
+
+b1 = b*100
+b2 = b*100.0
+
+print(b1, b2)
+
+b1 == b2 # True
+
+print(b1.dtype, b2.dtype) # different types (int32 and float32)
+
+#Q2
+
+arr = np.array( [np.arange(10)] )
+
+print( arr < 3 ) #  test if the values are less than 3
+print( np.less( arr < 3 ) ) 
+
+condition = np.logical_or(arr < 3, arr > 8)
+new_arr = np.where( condition, arr * 5, arr * -5 )
+print(new_arr)
+
+#Q3
+
+''' A function takes a 2-D array of horizontal zonal and meridonal wind components, 'u' and 'v' respectivly, and returns an array of the magnitudes of the total wind (sqrt(u**2 + v**2)). 
+
+Test:= if it is less than 0.1, then set it equal to 0.1.
+
+'''
+
+def total_wind_Magnitude(u, v, minmag = 0.1):
+    mag = ( u**2 + v**2 )**0.5
+    output = np.where( mag > minmag, mag, minmag )
+    return output
+
+#test the function out with different arrays
+u = np.array([ [4, 5, 6], [2, 3, 4] ])
+v = np.array([ [2, 2, 2], [1, 1, 1] ])
+print(total_wind_Magnitide(u,v))
+
+
+u = np.array([ [4, 5, 0.01], [2, 3, 4] ])
+v = np.array([ [2, 2, 0.03], [1, 1, 1] ])
+print(total_wind_Magnitude(u,v))
+
+# EXERCISE 4 - WORKING WITH MISSING VALUES
+
+import numpy as np
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

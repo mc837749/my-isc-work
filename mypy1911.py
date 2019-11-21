@@ -1,3 +1,6 @@
+###
+#Chapter 1: Introduction to Python
+###
 # EXERICE 1 - VARIABLES AND TYPES
 #Q1 - creating variables
 course = 'python'
@@ -446,7 +449,7 @@ print(res, d['isaiah'])
 
 
 ###
-#NumPy
+#Chapter 2: NumPy
 ###
 
 

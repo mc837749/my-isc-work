@@ -338,7 +338,6 @@ double_it(0.5)
 double_it('hello')
 
 #Q2 - calculate length of hypotenuse
-
 #  define a funtion with two arguments 
 def calc_hypo(a, b):
     #  using the arguments to solve
@@ -383,10 +382,84 @@ print(calc_hypo('python', 'java'))
 #  Create a new file called dancer.py with the following content:
 #   import sys
 #   from dancing.dance import boogie
-#   moves = sys.argv[1:]
+#   moves = sys.argv[1:] = MP: moves is NOT the variable from 'dance.py'
 #   boogie(moves)
 #  run by using == python dancer.py
 #  add values to the 'moves' variable or add the values to the end of the command and run again using == python dancer.py Twist LightBulb
 
-# EXERCISE 10 - SETS AND DICTIONARIES 
+# EXERCISE 10 - SETS AND DICTIONARIES
+
+#Q1 - create sets
+
+a = set([0, 1, 2, 3, 4, 5])
+b = set([2, 4, 6, 8])
+
+a|b # a.union(b)
+a&b # a.intersection(b)
+
+#Q2 -  create dictionary
+
+band = ['mel', 'geri', 'victoria', 'mel', 'emma']
+
+counts = {}
+
+for name in band:
+    if name not in counts:
+        counts[name] = 1
+    else:
+        counts[name] += 1
+
+for name in counts:
+    print(name, counts[name])
+
+
+#Q3 - other characteristics of dictionaries
+
+if {}: print('hi') #doesn't work
+
+d = {'maggie': 'uk', 'ronnie': 'usa'}
+
+#dir(d) will show the properties of dictionary 'd'
+
+d.items() #  view items in the dictionary
+d.keys() #  view the keys in the dictionary
+d.values() #  view the values in the dictionary
+
+d.get('isaiah', 'uk') # set default value no matter the key but does not add the key into the dictionary
+res = d.setdefault('isaiah', 'uk') # add key and value to the dictionary 'd'
+
+print(res, d['isaiah'])
+
+
+# EXERCISE 11 - OBJECT ORIENTED PROGRAMMING
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

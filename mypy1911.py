@@ -397,23 +397,29 @@ b = set([2, 4, 6, 8])
 a|b # a.union(b)
 a&b # a.intersection(b)
 
-#Q2 -  create dictionary
+#Q2 -  use a dictionary to count
 
 band = ['mel', 'geri', 'victoria', 'mel', 'emma']
 
-counts = {}
+counts = {} #  create an empty dictionary
 
+''' Count the number of the same name appearing in the list 'band' using a dictionary '''
+
+#  loops through each name in the list 'band' and count the number of the same name
 for name in band:
+    # if there is no existent name in the set 'counts' then give the 		value of the name as 1
     if name not in counts:
         counts[name] = 1
+    # if there is an existent name in the set 'counts' then add 1 to 		the value
     else:
         counts[name] += 1
 
+#  
 for name in counts:
     print(name, counts[name])
 
 
-#Q3 - other characteristics of dictionaries
+#Q3 - characteristics of dictionaries
 
 if {}: print('hi') #doesn't work
 
@@ -435,7 +441,68 @@ print(res, d['isaiah'])
 
 
 
+# ERRORS, EXCEPTIONS, LOGGING AND DEBUGGING
 
+
+
+###
+#NumPy
+###
+
+
+# EXERCISE 1 - ARRAYS 
+
+#Q1
+import numpy as np
+
+x = np.arange(1,11)
+a1 = np.array(x, dtype = np.int32)
+a2 = np.array(x, dtype = np.float32)
+
+print( a1.dtype )
+print( a2.dtype )
+
+#Q2
+
+array1 = np.zeros( [2, 3, 4] ) # create arrays with zeros
+array2 = np.ones( [2, 3, 4] ) # creates arrays with ones
+array3 = np.arange( 100 ) # create arrays with a range
+
+#Q3
+
+a = np.array( [2, 3.2, 5.5, -6.4, -2.2, 2.4] )
+print( a[1] )
+print( a[1:4] )
+
+a = np.array( [ [2, 3.2, 5.5, -6.4, -2.2, 2.4], [1, 22, 4, 0.1, 5.3, -9], [3, 1, 2.1, 21, 1.1, -2.1] ])
+
+print( a[:,3] )
+print( a[1:4, 0:4] )
+print( a[1:,2] )
+
+
+
+# EXERCISE 2 - INTERROGATING AND MANIPULATING ARRAYS
+
+#Q1
+
+arr = np.array( [ [np.arange(4)], [np.arange(10,14)] ])
+print( np.shape(arr) ) # view shape
+print( np.size(arr) ) # view size of array
+print( np.max(arr) ) # view maximum value in array
+print( np.min(arr) ) # view minimum value in array
+
+#Q2
+
+print( np.reshape(arr, (2,2) ) ) # reshape array
+print( np.transpose(arr) ) # transpose the array
+print( np.ravel(arr) ) # flatten the array to 2-D
+print( arr.astype(np.float32) ) # convert to floats
+
+
+# EXERCISE 3 - ARRAY CALCULATIONS AND OPERATIONS
+
+#Q1 
 
 
 

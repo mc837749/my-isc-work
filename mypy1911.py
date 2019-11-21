@@ -561,7 +561,105 @@ print(total_wind_Magnitude(u,v))
 
 # EXERCISE 4 - WORKING WITH MISSING VALUES
 
-import numpy as np
+import numpy.ma as MA
+
+# create a masked array and mask values in the array manualy and using 'masked_where' 
+marr = MA.masked_array(range(10), fill_value = -999)
+print(marr, marr.fill_value)
+
+marr[2] = MA.masked
+print(marr, marr.mask)
+
+narr = MA.masked_where(marr > 6, marr)
+print(narr)
+print(narr.fill_value)
+
+# in order to replace the missing value with the fill_value, you create a variable
+
+filled_narr = MA.filled(narr)
+print(filled_narr)
+type(filled_narr) #<class 'numpy.ndarray'>
+
+#Q2
+
+m1 = MA.masked_array(range(1,9))
+print(m1)
+
+m2 = m1.reshape(2,4)
+print(m2)
+
+m3 = MA.masked_where(m2 > 6, m2)
+print(m3)
+
+print(m3*100)
+
+# use np to generate an array of ones
+result = m3 - np.ones((2,4))
+print(result)
+print(type(result)) # <class 'numpy.ma.core.MaskedArray'>
+
+
+###
+# Chapter 3 - Matplotlib
+###
+
+# EXERCISE 1 - 
+
+import matplotlib.pyplot as plt
+#Q1
+
+plt.plot(range(10))
+plt.show()
+
+#Q2
+
+Time = list(range(7))
+CO2_conc = [250, 265, 272, 260, 300, 320, 389]
+plt.plot(Time, CO2_conc, 'b--')
+plt.title ('The evolution of CO2 concentration')
+plt.ylabel('CO2 Concentration (ppm)')
+plt.xlabel('Time (decades)')
+plt.show()
+
+Temp = [14.1, 15.5, 16.3, 18.1, 17.3, 19.1, 20.2]
+plt.plot(Time, CO2_conc, 'b--'. Time, Temp, 'g-')
+plt.savefig('co2_temp.pdf')
+plt.show()
+
+# EXERCISE 2 - 
+
+#Q1
+
+import matplotlib.pyplot as plt
+
+fig, ax1 = plt.subplots()
+ax1.plot(Time, CO2_conc)
+ax1.set_ylabel('CO2 concentration')
+ax2 = ax1.twinx()
+ax2.plot(Time, Temp, 'r-')
+ax2.set_ylabel('Temperature')
+plot.show()
+
+#Q2
+
+plot.subplot(1, 3, 1)
+x = range(0, 10, 1)
+plt.plot(x)
+
+plt.subplot(1, 3, 2)
+y = range(10, 0, -1)
+plt.plot(y)
+
+plt.subplot(1, 3, 3)
+z = [4]*10
+plt.plot(z)
+plt.show()
+
+
+#Q3
+
+
+
 
 
 

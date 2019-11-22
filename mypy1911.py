@@ -662,7 +662,7 @@ from example_code.map_data import *
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 
-
+# using Basemap in adding coastlines
 fig = plt.figure()
 m = Basemap(projection='cyl', llcrnrlat=-90, urcrnrlat=90, llcrnrlon=-180, urcrnrlon=180, resolution='c')
 m.drawcoastlines()
@@ -672,6 +672,8 @@ iml = m.pcolormesh(lons,lats,tas, shading='flat', cmap=plt.cm.jet,latlon=True)
 plt.savefig('tas1.png')
 plt.show()
 
+
+#  adding gridlines
 fig.figure()
 plt.title('Change in Surface Air Temperature from MOHC HadGEM2-ES')
 m = Basemap(projection='cyl', llcrnrlat=-90, urcrnrlat=90, llcrnrlon=-180, urcrnrlon=180, resolution='c')
